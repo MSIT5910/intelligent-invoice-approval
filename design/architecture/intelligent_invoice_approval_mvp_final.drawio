@@ -1,0 +1,43 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="invoice-architecture" name="Intelligent Invoice Approval MVP">
+    <mxGraphModel dx="1260" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=22;fontStyle=1;" value="Intelligent Invoice Approval MVP Architecture" vertex="1">
+          <mxGeometry height="40" width="600" x="250" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="outlook" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;strokeWidth=2;" value="&lt;b&gt;Exchange / Outlook&lt;br&gt;Test Mailbox&lt;/b&gt;&lt;br&gt;&lt;br&gt;Receives invoice PDF" vertex="1">
+          <mxGeometry height="120" width="220" x="90" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="powerauto" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;strokeWidth=2;" value="&lt;b&gt;Power Automate + Copilot&lt;br&gt;&lt;/b&gt;&lt;br&gt;• Detect invoice email&lt;br&gt;• Retrieve attachment&lt;br&gt;• Prompt Copilot&lt;br&gt;• Extract invoice data&lt;br&gt;• Validate required data" vertex="1">
+          <mxGeometry height="160" width="240" x="430" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="esm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;strokeWidth=2;" value="&lt;b&gt;Enterprise Service Management (ESM)&lt;br&gt;&lt;/b&gt;&lt;br&gt;• Create invoice record&lt;br&gt;• Route for review&lt;br&gt;• Capture coding and justification&lt;br&gt;• Record approval and status" vertex="1">
+          <mxGeometry height="170" width="310" x="395" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="approver" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=15;strokeWidth=2;" value="&lt;b&gt;Human Approver&lt;/b&gt;&lt;br&gt;&lt;br&gt;Review / correct&lt;br&gt;Code / justify&lt;br&gt;Approve / reject" vertex="1">
+          <mxGeometry height="140" width="180" x="100" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="purchasing" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=15;strokeWidth=2;" value="&lt;b&gt;Purchasing&lt;/b&gt;&lt;br&gt;&lt;br&gt;Receives approved, complete&lt;br&gt;invoice record for handoff" vertex="1">
+          <mxGeometry height="140" width="200" x="790" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="outlook" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=14;" target="powerauto" value="Invoice PDF">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="powerauto" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=14;" target="esm" value="Structured invoice data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="esm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;startArrow=block;startFill=1;fontSize=14;" target="approver" value="Review / decision">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="esm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=14;" target="purchasing" value="Approved invoice package">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=2;" value="Modular design allows each component to be enhanced or replaced independently as the solution evolves." vertex="1">
+          <mxGeometry height="40" width="600" x="250" y="780" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
