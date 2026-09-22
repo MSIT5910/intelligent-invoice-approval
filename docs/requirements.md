@@ -21,3 +21,12 @@
 - **NFR-05 - Traceability:** The workflow should preserve sufficient status and decision information to determine how an invoice progressed through the prototype.
 - **NFR-06 - Maintainability and Modularity:** Intake, intelligent processing, and workflow functions should remain sufficiently separated so one component can be modified or enhanced without redesigning the complete solution.
 - **NFR-07 - Performance:** Under normal prototype conditions, automated intake and extraction should complete without unreasonable delay. A specific threshold will be established after an initial processing baseline is measured.
+
+Minimum Extracted Invoice Fields
+
+Vendor name
+Invoice number
+Invoice date
+Invoice amount
+Description/purpose
+Due date, when present
